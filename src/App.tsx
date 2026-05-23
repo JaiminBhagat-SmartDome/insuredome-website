@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import './App.css'
-import { Header, TrustStats } from './components'
+import { Header, TrustStats, CategoryTiles, InquiryModal, FloatingActionButton } from './components'
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="app-container">
       <Header />
@@ -17,14 +23,16 @@ function App() {
           {/* Trust Stats Grid */}
           <TrustStats />
 
-          {/* Placeholder for next sections */}
-          <section className="section my-16 p-8 bg-surface-container rounded-card text-center">
-            <p className="text-body-lg text-on-surface-variant">
-              More components coming soon...
-            </p>
-          </section>
+          {/* Category Tiles Grid */}
+          <CategoryTiles />
         </div>
       </main>
+
+      {/* Inquiry Modal */}
+      <InquiryModal isOpen={isModalOpen} onClose={closeModal} />
+
+      {/* Floating Action Button */}
+      <FloatingActionButton onClick={openModal} />
     </div>
   )
 }
