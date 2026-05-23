@@ -1,19 +1,28 @@
 import './App.css'
-import { Header } from './components/Header'
+import { Header, TrustStats } from './components'
 
 function App() {
   return (
     <div className="app-container">
       <Header />
       <main className="app-main">
-        {/* Main content will be added in subsequent tasks */}
-        <div className="text-center py-12">
-          <h2 className="text-display-lg-mobile md:text-display-lg text-on-surface mb-4">
-            Welcome to Insure Dome
-          </h2>
-          <p className="text-body-lg text-on-surface-variant">
-            Building your protection layer...
-          </p>
+        <div className="container">
+          {/* Hero Section */}
+          <section className="section my-12">
+            <h1 className="text-display-lg-mobile md:text-display-lg text-on-surface max-w-2xl leading-tight">
+              Have an award-winning insurer by your side
+            </h1>
+          </section>
+
+          {/* Trust Stats Grid */}
+          <TrustStats />
+
+          {/* Placeholder for next sections */}
+          <section className="section my-16 p-8 bg-surface-container rounded-card text-center">
+            <p className="text-body-lg text-on-surface-variant">
+              More components coming soon...
+            </p>
+          </section>
         </div>
       </main>
     </div>
