@@ -43,7 +43,7 @@ jobs:
       - name: Build project
         run: npm run build
         env:
-          VITE_BASE: /insuredome-website/
+          VITE_BASE: /
 
       - name: Upload build artifacts
         uses: actions/upload-pages-artifact@v3
