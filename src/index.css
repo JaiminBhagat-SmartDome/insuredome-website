@@ -20,7 +20,7 @@
 
   /* Surface Colors (dark) */
   --color-surface: #091426; /* main background */
-  --color-surface-white: rgba(255,255,255,0.04); /* subtle card */
+  --color-surface-white: rgba(255,255,255,0.95); /* opaque modal/card background */
   --color-surface-dim: #0f172a;
   --color-surface-container: rgba(30,41,59,0.6);
 

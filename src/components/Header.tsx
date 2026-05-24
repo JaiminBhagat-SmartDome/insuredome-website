@@ -79,16 +79,19 @@ export const Header = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-primary-container rounded-lg shadow-custom-shadow-l2 py-2 z-50">
-                  {['en', 'hi', 'gu'].map((lang) => (
+                <div className="absolute right-0 mt-2 w-44 bg-surface-container border border-outline rounded-xl shadow-custom-shadow-l2 overflow-hidden z-50">
+                  {['en', 'hi', 'gu'].map((lang, index) => (
                     <button
                       key={lang}
                       onClick={() => handleLanguageChange(lang)}
-                      className={`block w-full text-left px-4 py-2 font-label-sm transition-colors ${
+                      className={`block w-full text-left px-4 py-3 font-label-sm font-semibold transition-colors ${
+                        index > 0 ? 'border-t border-outline-variant' : ''
+                      } ${
                         currentLanguage === lang
                           ? 'bg-secondary/20 text-secondary'
-                          : 'text-on-primary hover:bg-white/10'
+                          : 'text-on-primary hover:bg-white/5 active:bg-white/10'
                       }`}
+                      aria-current={currentLanguage === lang ? 'true' : undefined}
                     >
                       {languageLabels[lang]}
                     </button>
