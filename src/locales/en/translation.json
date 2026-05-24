@@ -52,15 +52,85 @@
         "Terminal illness benefit",
         "Tax saving under Section 80C"
       ]
+    },
+    "home": {
+      "title": "Home Insurance",
+      "description": "Protect your home and valuables against fire, theft, and natural disasters.",
+      "for_whom_desc": "Homeowners, tenants, housing societies.",
+      "benefits": [
+        "Coverage for structure and contents",
+        "Protection against fire, burglary, floods",
+        "Affordable premiums"
+      ]
+    },
+    "travel": {
+      "title": "Travel Insurance",
+      "description": "Secure your journeys with coverage for medical emergencies, trip cancellations, and lost baggage.",
+      "for_whom_desc": "Frequent travelers, students studying abroad, corporate employees on business trips.",
+      "benefits": [
+        "Medical coverage overseas",
+        "Compensation for lost baggage",
+        "Trip cancellation protection"
+      ]
+    },
+    "fire": {
+      "title": "Fire Insurance",
+      "description": "Protect your property against fire accidents and related damages.",
+      "for_whom_desc": "Homeowners, shopkeepers, industrial units.",
+      "benefits": [
+        "Coverage for fire and allied perils",
+        "Affordable premiums",
+        "Quick claim settlement"
+      ]
+    },
+    "marine": {
+      "title": "Marine Insurance",
+      "description": "Safeguard cargo and ships against sea-related risks.",
+      "for_whom_desc": "Exporters, importers, shipping companies.",
+      "benefits": [
+        "Coverage for cargo loss/damage",
+        "Protection against piracy and natural calamities",
+        "Flexible policy options"
+      ]
+    },
+    "commercial": {
+      "title": "Commercial Insurance",
+      "description": "Comprehensive protection for businesses against property damage, liability, and employee safety risks.",
+      "for_whom_desc": "Small businesses, corporates, factories, offices.",
+      "benefits": [
+        "Property and liability coverage",
+        "Employee safety benefits",
+        "Business continuity support"
+      ]
+    },
+    "addon": {
+      "title": "Add-on Insurance",
+      "description": "Enhance your base policy with add-ons for extra protection.",
+      "for_whom_desc": "Policyholders seeking customized coverage.",
+      "benefits": [
+        "Accidental death rider",
+        "Critical illness rider",
+        "Zero depreciation cover"
+      ]
+    },
+    "cyber": {
+      "title": "Cyber Security Insurance",
+      "description": "Protect your digital assets against cyber threats, data breaches, and online fraud.",
+      "for_whom_desc": "Businesses, startups, individuals with online presence.",
+      "benefits": [
+        "Coverage for data breach costs",
+        "Protection against cyber fraud",
+        "Legal liability coverage"
+      ]
     }
   },
   "modal": {
     "title": "Request a Call Back",
     "subtitle": "Fill in the details below and our claims team will get back to you shortly.",
     "contact_available": "Contact Us Now",
-    "phone_number": "+91 98765 43210",
+    "phone_number": "+91 99999 99999",
     "call_now": "Call us directly",
-    "email_address": "support@insuredome.com",
+    "email_address": "support@insuredome.in",
     "email_us": "Email us",
     "unavailable_form": "or fill out the form below and we'll get back to you shortly",
     "name": "Full Name",

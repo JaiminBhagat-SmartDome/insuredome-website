@@ -53,7 +53,7 @@ export const Header = () => {
             <div className="sm:hidden relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-container/50 hover:bg-primary-container transition-colors"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary-container hover:bg-primary-container/90 transition-colors focus:outline-none focus:ring-2 focus:ring-secondary"
                 aria-label="Select language"
                 aria-expanded={isDropdownOpen}
               >
@@ -79,7 +79,7 @@ export const Header = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-44 bg-surface-container border border-outline rounded-xl shadow-custom-shadow-l2 overflow-hidden z-50">
+                <div className="absolute right-0 mt-2 w-44 bg-primary-container border border-outline rounded-xl shadow-custom-shadow-l2 overflow-hidden z-50">
                   {['en', 'hi', 'gu'].map((lang, index) => (
                     <button
                       key={lang}

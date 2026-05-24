@@ -1,18 +1,22 @@
 import { useTranslation } from 'react-i18next';
-import motorIcon from '../assets/motor-insurance.svg';
-import healthIcon from '../assets/health-insurance.svg';
-import termIcon from '../assets/term-life-insurance.svg';
 
 interface Product {
-  key: 'motor' | 'health' | 'term';
-  iconSrc: string;
+  key: 'motor' | 'health' | 'term' | 'home' | 'travel' | 'fire' | 'marine' | 'commercial' | 'addon' | 'cyber';
+  icon: string;
   accentColor: string;
 }
 
 const PRODUCTS: Product[] = [
-  { key: 'motor', iconSrc: motorIcon, accentColor: 'text-green-400' },
-  { key: 'health', iconSrc: healthIcon, accentColor: 'text-red-400' },
-  { key: 'term', iconSrc: termIcon, accentColor: 'text-blue-400' },
+  { key: 'motor', icon: 'directions_car', accentColor: 'text-green-400' },
+  { key: 'health', icon: 'local_hospital', accentColor: 'text-red-400' },
+  { key: 'term', icon: 'shield', accentColor: 'text-blue-400' },
+  { key: 'home', icon: 'home', accentColor: 'text-amber-400' },
+  { key: 'travel', icon: 'flight', accentColor: 'text-sky-400' },
+  { key: 'fire', icon: 'local_fire_department', accentColor: 'text-orange-400' },
+  { key: 'marine', icon: 'anchor', accentColor: 'text-cyan-400' },
+  { key: 'commercial', icon: 'business_center', accentColor: 'text-violet-400' },
+  { key: 'addon', icon: 'add_circle', accentColor: 'text-teal-400' },
+  { key: 'cyber', icon: 'shield_moon', accentColor: 'text-indigo-400' },
 ];
 
 export const CategoryTiles = () => {
@@ -21,7 +25,7 @@ export const CategoryTiles = () => {
   return (
     <section className="section my-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {PRODUCTS.map(({ key, iconSrc }) => (
+        {PRODUCTS.map(({ key, icon, accentColor }) => (
           <article
             key={key}
             className="glass-card rounded-card shadow-custom-shadow-l1 flex flex-col overflow-hidden hover:shadow-custom-shadow-hover transition-all duration-200 group"
@@ -29,11 +33,9 @@ export const CategoryTiles = () => {
             {/* Top Icon Section */}
             <div className="p-8 pb-4">
               <div className="flex justify-center mb-6">
-                <img
-                  src={iconSrc}
-                  alt={`${t(`products.${key}.title`)} icon`}
-                  className="w-24 h-24 object-contain transition-transform duration-200 group-hover:scale-105"
-                />
+                <span className={`material-symbols-outlined text-[10rem] ${accentColor} transition-transform duration-200 group-hover:scale-105`}>
+                  {icon}
+                </span>
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface text-center mb-2">
                 {t(`products.${key}.title`)}
@@ -66,16 +68,6 @@ export const CategoryTiles = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="px-8 py-6 border-t border-white/10 flex gap-3 mt-auto">
-              <button className="flex-1 bg-secondary hover:bg-secondary-container text-on-secondary font-label-sm py-3 rounded-lg transition-colors">
-                {t('products.cta_plans')}
-              </button>
-              <button className="flex-1 border border-secondary text-secondary hover:bg-secondary/10 font-label-sm py-3 rounded-lg transition-colors">
-                {t('products.cta_quotes')}
-              </button>
             </div>
           </article>
         ))}
