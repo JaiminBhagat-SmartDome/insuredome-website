@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import './App.css'
 import { Header, TrustStats, CategoryTiles, InquiryModal, FloatingActionButton } from './components'
+import { useLangQueryParam } from './hooks/useLangQueryParam'
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Handle dynamic lang query parameter and auto-scroll
+  useLangQueryParam();
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -14,17 +18,21 @@ function App() {
       <main className="app-main">
         <div className="container">
           {/* Hero Section */}
-          <section className="section my-12">
+          <section id="hero" className="section my-12">
             <h1 className="text-display-lg-mobile md:text-display-lg text-on-surface max-w-2xl leading-tight">
-              Have an award-winning insurer by your side
+              Experienced Insurance Advisor
             </h1>
           </section>
 
           {/* Trust Stats Grid */}
-          <TrustStats />
+          <section id="stats">
+            <TrustStats />
+          </section>
 
           {/* Category Tiles Grid */}
-          <CategoryTiles />
+          <section id="products">
+            <CategoryTiles />
+          </section>
         </div>
       </main>
 
