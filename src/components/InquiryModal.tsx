@@ -1,4 +1,4 @@
-import { useState, useEffect, type ChangeEvent, type FormEvent } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface InquiryModalProps {
@@ -8,10 +8,6 @@ interface InquiryModalProps {
 
 export const InquiryModal = ({ isOpen, onClose }: InquiryModalProps) => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({ name: '', phone: '', type: '' });
-  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
     const handleEscKey = (event: KeyboardEvent) => {
@@ -24,42 +20,24 @@ export const InquiryModal = ({ isOpen, onClose }: InquiryModalProps) => {
     return () => window.removeEventListener('keydown', handleEscKey);
   }, [isOpen, onClose]);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleTurnstileSimulation = () => {
-    setIsCaptchaVerified((prev) => !prev);
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!isCaptchaVerified) {
-      alert(t('modal.error_captcha'));
-      return;
-    }
-
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-
-    setTimeout(() => {
-      setIsSuccess(false);
-      setFormData({ name: '', phone: '', type: '' });
-      setIsCaptchaVerified(false);
-      onClose();
-    }, 2000);
-  };
-
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-surface-white rounded-card shadow-custom-shadow-l3 max-w-md w-full border border-outline overflow-hidden animate-in">
-        {/* Contact + Form */}
+        {/* Header with close button */}
+        <div className="flex items-center justify-between px-6 md:px-8 py-4 border-b border-outline">
+          <h2 className="text-lg font-semibold text-on-surface">{t('modal.call_now')}</h2>
+          <button
+            onClick={onClose}
+            className="text-on-surface/60 hover:text-on-surface transition-colors p-1"
+            aria-label="Close modal"
+          >
+            <span className="material-symbols-outlined text-[1.5rem]">close</span>
+          </button>
+        </div>
+
+        {/* Contact section */}
         <div className="px-6 md:px-8 py-6 bg-surface">
           <div className="mb-6 space-y-4">
             <div className="rounded-3xl bg-primary-container px-4 py-4 shadow-custom-shadow-l1 border border-outline">
